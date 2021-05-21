@@ -1,10 +1,8 @@
-import React, { Suspense, useRef, useState, useEffect, Component } from "react"
+import React, {  useRef } from "react"
 import './App.css';
 import * as tf from "@tensorflow/tfjs";
 import * as blazeface from "@tensorflow-models/blazeface";
-import Webcam from "react-webcam";
 import {drawMesh, drawMoustaches} from "./utilities";
-import { Abs, Acos, image, sin, Sqrt } from "@tensorflow/tfjs";
 
 let CanvasWidth = 640;
 let CanvasHeight = 480;
@@ -48,7 +46,6 @@ const defaultImage = 'blankImage.jpg';
 
 function App() {
   // Setup references
-  const webcamRef = useRef(null);
   const imageRef = useRef(null);
   const canvasRef = useRef(null);
 
@@ -217,6 +214,7 @@ function App() {
                 position:"absolute",
                 marginLeft:"auto",
                 marginRight:"auto",
+                marginTop: 50,
                 left:0,
                 right:0,
                 textAlign:"centr",
@@ -229,6 +227,7 @@ function App() {
             position:"absolute",
             marginLeft:"auto",
             marginRight:"auto",
+            marginTop: 50,
             left:0,
             right:0,
             textAlign:"centr",
